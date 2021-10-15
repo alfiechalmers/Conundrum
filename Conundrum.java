@@ -33,11 +33,26 @@ public class Conundrum {
 			System.out.println("Better luck next time...");
 			System.exit(1);
 		} else {
-			System.out.println("Well done! You did it on your " + (attempts) + " guess");
+			String ending = getEnding(attempts);
+			System.out.println("Well done! You did it on your " + (attempts + ending) + " guess");
 			System.exit(1);
 		}
 		scanner.close();
 
+	}
+
+	public static String getEnding(int attempts) {
+		switch (attempts) {
+			case 1:
+				return "st";
+			case 2:
+				return "nd";
+			case 3:
+				return "rd";
+			default:
+				return "error you dumbass";
+
+		}
 	}
 
 	public static String getScrambledWord(String word) {
